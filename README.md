@@ -1,4 +1,4 @@
-# DTG2021-group-project wow im at a | || || |_ for words
+# DTG2021-group-project wow im at a | || || |_ for words.
 Team name
 Trial and
 Error
