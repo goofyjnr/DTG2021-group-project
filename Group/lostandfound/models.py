@@ -8,6 +8,7 @@ class LostItem(models.Model):
     datelost = models.DateField()
     contactinfo = models.CharField(max_length=2000)
     name = models.TextField(max_length=50)
+    itemid = models.IntegerField()
 
 
 class FoundItem(models.Model):
