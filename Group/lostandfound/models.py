@@ -7,12 +7,12 @@ class LostItem(models.Model):
     description = models.CharField(max_length=2000)
     datelost = models.DateField()
     contactinfo = models.CharField(max_length=2000)
-    name = models.TextField(max_length=50)
-    itemid = models.IntegerField()
+    name = models.CharField(max_length=50)
+    #itemid = models.IntegerField() don't know how to use this yet
 
 
 class FoundItem(models.Model):
     pass
 
-class Person(models.Model):
+class User(models.Model):
     pass
