@@ -1,4 +1,5 @@
 <h1>Lost and Found website</h1>
+<h2>All lost items</h2>
 <table>
     <tr>
       <th>Type of item</th>
@@ -8,6 +9,47 @@
       <th>Name</th>
     </tr>
     {% for Lostitem in all_lost%}
+        <tr>
+            <td>{{Lostitem.typeofitem}}</td>
+            <td>{{Lostitem.description}}</td>
+            <td>{{Lostitem.datelost}}</td>
+            <td>{{Lostitem.contactinfo}}</td>
+            <td>{{Lostitem.name}}</td>
+        </tr>
+    {% endfor %}
+
+  </table>
+<h2>Lost phones</h2>
+  <table>
+    <tr>
+      <th>Type of item</th>
+      <th>Description</th>
+      <th>Date lost</th>
+      <th>Contact info</th>
+      <th>Name</th>
+    </tr>
+    {% for Lostitem in lost_phones%}
+        <tr>
+            <td>{{Lostitem.typeofitem}}</td>
+            <td>{{Lostitem.description}}</td>
+            <td>{{Lostitem.datelost}}</td>
+            <td>{{Lostitem.contactinfo}}</td>
+            <td>{{Lostitem.name}}</td>
+        </tr>
+    {% endfor %}
+
+  </table>
+
+  <h2>Lost today</h2>
+  <table>
+    <tr>
+      <th>Type of item</th>
+      <th>Description</th>
+      <th>Date lost</th>
+      <th>Contact info</th>
+      <th>Name</th>
+    </tr>
+    {% for Lostitem in lost_today%}
         <tr>
             <td>{{Lostitem.typeofitem}}</td>
             <td>{{Lostitem.description}}</td>
