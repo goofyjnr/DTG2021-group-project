@@ -10,7 +10,7 @@
     </tr>
     {% for Lostitem in all_lost%}
         <tr>
-            <td>{{Lostitem.typeofitem}}</td>
+            <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.typeofitem}}</a></td>
             <td>{{Lostitem.description}}</td>
             <td>{{Lostitem.datelost}}</td>
             <td>{{Lostitem.contactinfo}}</td>
@@ -30,7 +30,7 @@
     </tr>
     {% for Lostitem in lost_phones%}
         <tr>
-            <td>{{Lostitem.typeofitem}}</td>
+            <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.typeofitem}}</a></td>
             <td>{{Lostitem.description}}</td>
             <td>{{Lostitem.datelost}}</td>
             <td>{{Lostitem.contactinfo}}</td>
@@ -51,7 +51,7 @@
     </tr>
     {% for Lostitem in lost_today%}
         <tr>
-            <td>{{Lostitem.typeofitem}}</td>
+            <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.typeofitem}}</a></td>
             <td>{{Lostitem.description}}</td>
             <td>{{Lostitem.datelost}}</td>
             <td>{{Lostitem.contactinfo}}</td>
