@@ -2,19 +2,15 @@
 <h2>All lost items</h2>
 <table>
     <tr>
+      <th>Title</th>
       <th>Type of item</th>
-      <th>Description</th>
       <th>Date lost</th>
-      <th>Contact info</th>
-      <th>Name</th>
     </tr>
     {% for Lostitem in all_lost%}
         <tr>
-            <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.typeofitem}}</a></td>
-            <td>{{Lostitem.description}}</td>
+            <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.title}}</a></td>
+            <td>{{Lostitem.typeofitem}}</td>
             <td>{{Lostitem.datelost}}</td>
-            <td>{{Lostitem.contactinfo}}</td>
-            <td>{{Lostitem.name}}</td>
         </tr>
     {% endfor %}
 
@@ -22,19 +18,15 @@
 <h2>Lost phones</h2>
   <table>
     <tr>
+      <th>Title</th>
       <th>Type of item</th>
-      <th>Description</th>
       <th>Date lost</th>
-      <th>Contact info</th>
-      <th>Name</th>
     </tr>
     {% for Lostitem in lost_phones%}
         <tr>
-            <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.typeofitem}}</a></td>
-            <td>{{Lostitem.description}}</td>
-            <td>{{Lostitem.datelost}}</td>
-            <td>{{Lostitem.contactinfo}}</td>
-            <td>{{Lostitem.name}}</td>
+          <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.title}}</a></td>
+          <td>{{Lostitem.typeofitem}}</td>
+          <td>{{Lostitem.datelost}}</td>
         </tr>
     {% endfor %}
 
@@ -43,19 +35,15 @@
   <h2>Lost today</h2>
   <table>
     <tr>
+      <th>Title</th>
       <th>Type of item</th>
-      <th>Description</th>
       <th>Date lost</th>
-      <th>Contact info</th>
-      <th>Name</th>
     </tr>
     {% for Lostitem in lost_today%}
         <tr>
-            <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.typeofitem}}</a></td>
-            <td>{{Lostitem.description}}</td>
-            <td>{{Lostitem.datelost}}</td>
-            <td>{{Lostitem.contactinfo}}</td>
-            <td>{{Lostitem.name}}</td>
+          <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.title}}</a></td>
+          <td>{{Lostitem.typeofitem}}</td>
+          <td>{{Lostitem.datelost}}</td>
         </tr>
     {% endfor %}
 

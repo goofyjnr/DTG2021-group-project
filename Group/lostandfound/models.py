@@ -4,8 +4,9 @@ from django.db import models
 
 class LostItem(models.Model):
     
-    typeofitem = models.CharField(max_length=2000)
-    description = models.CharField(max_length=2000)
+    title = models.CharField(max_length=50)
+    typeofitem = models.CharField(max_length=200)
+    description = models.TextField()
     datelost = models.DateField()
     contactinfo = models.CharField(max_length=2000)
     name = models.CharField(max_length=50)
