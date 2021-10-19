@@ -25,3 +25,19 @@ def detail(request,lost_id):
     context = {"item": item}
 
     return render(request, 'lostandfound/detail.html', context)
+
+def search(request):
+
+    all_lost = LostItem.objects.all().order_by("datelost")
+    
+    if len(request.GET) == 0:
+        relevant_lost = all_lost 
+    else:
+        search_string = request.GET['q']
+        relevant_lost = all_lost.filter(typeofitem__contains = search_string)
+
+    context = {'relevant_lost':relevant_lost}
+
+    return render(request,'lostandfound/search.html', context)
+
+

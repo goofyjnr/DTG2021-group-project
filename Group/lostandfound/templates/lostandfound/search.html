@@ -1,0 +1,24 @@
+<h1>Lost Items search</h1>
+
+<form action="" method="GET">
+    <input type="text" name="q">
+
+    <input type="submit" value="Search">
+
+</form>
+
+<h2>Results</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Type of item</th>
+        <th>Date lost</th>
+      </tr>
+      {% for Lostitem in relevant_lost %}
+          <tr>
+            <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.title}}</a></td>
+            <td>{{Lostitem.typeofitem}}</td>
+            <td>{{Lostitem.datelost}}</td>
+          </tr>
+      {% endfor %}
+</table>
