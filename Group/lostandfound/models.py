@@ -14,7 +14,12 @@ class LostItem(models.Model):
 
 
 class FoundItem(models.Model):
-    pass
+    title =  models.CharField(max_length=50)
+    typeofitem = models.CharField(max_length=200)
+    description = models.TextField()
+    datefound = models.DateField()
+    contactinfo = models.CharField(max_length=2000)
+    name = models.CharField(max_length=50)
 
-class User(models.Model):
-    pass
+#class User(models.Model):
+ #   pass
