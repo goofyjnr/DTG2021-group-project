@@ -37,11 +37,11 @@
     <th>Type of item</th>
     <th>Date Found</th>
   </tr>
-  {% for Found_item in all_found%}
+  {% for Founditem in all_found %}
       <tr>
-          <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.title}}</a></td>
-          <td>{{Found_item.typeofitem}}</td>
-          <td>{{Found_item.datefound}}</td>
+          <td><a href="{% url 'detail_2' Founditem.id%}">{{Found_item.title}}</a></td>
+          <td>{{Founditem.typeofitem}}</td>
+          <td>{{Founditem.datefound}}</td>
       </tr>
   {% endfor %}
 

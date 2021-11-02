@@ -15,7 +15,7 @@ def index(request):
     lost_phones = all_lost.filter(typeofitem__contains = "phone")
 
     lost_today = all_lost.filter(datelost = datetime.now())
-    found_today = all_lost.filter(datefound = datetime.now())
+    found_today = all_found.filter(datefound = datetime.now())
 
     context = {"all_lost" : all_lost, "lost_phones": lost_phones, "lost_today":lost_today, "all_found" : all_found, "found_today" : found_today}
 
@@ -23,23 +23,35 @@ def index(request):
 
 def detail(request,lost_id):
 
-    item =get_object_or_404(LostItem, pk=lost_id)
+    lost_item = get_object_or_404(LostItem, pk=lost_id)
 
-    context = {"item": item}
+    context = {"lost_item": lost_item}
 
     return render(request, 'lostandfound/detail.html', context)
+
+def detail_2(request,found_id):
+
+    found_item = get_object_or_404(FoundItem, pk=found_id)
+
+    context = {"found_item":found_item}
+
+    return render(request, 'lostandfound/detail_2.html', context)
+
 
 def search(request):
 
     all_lost = LostItem.objects.all().order_by("datelost")
+    all_found = FoundItem.objects.all().order_by("datefound")
     
     if len(request.GET) == 0:
         relevant_lost = all_lost 
+        relevant_found = all_found
     else:
         search_string = request.GET['q']
         relevant_lost = all_lost.filter(typeofitem__contains = search_string)
+        relevant_found = all_found.filter(typeofitem__contains = search_string)
 
-    context = {'relevant_lost':relevant_lost}
+    context = {'relevant_lost':relevant_lost, 'relevant_found':relevant_found}
 
     return render(request,'lostandfound/search.html', context)
 

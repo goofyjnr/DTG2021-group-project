@@ -8,6 +8,7 @@
 </form>
 
 <h2>Results</h2>
+<h2>Lost items</h2>
 <table>
     <tr>
         <th>Title</th>
@@ -21,4 +22,19 @@
             <td>{{Lostitem.datelost}}</td>
           </tr>
       {% endfor %}
+</table>
+<h2>Found items</h2>
+<table>
+  <tr>
+      <th>Title</th>
+      <th>Type of item</th>
+      <th>Date Found</th>
+    </tr>
+    {% for Founditem in relevant_found %}
+        <tr>
+          <td><a href="{% url 'detail_2' Founditem.id%}">{{Founditem.title}}</a></td>
+          <td>{{Founditem.typeofitem}}</td>
+          <td>{{Founditem.datelost}}</td>
+        </tr>
+    {% endfor %}
 </table>

@@ -20,6 +20,6 @@ from . import views
 urlpatterns = [
     path('',views.index, name = 'index'),
     path('lost<int:lost_id>/',views.detail, name='detail'),
-    path('found<int:found_id>/',views.detail2, name='detail_2'),
+    path('found<int:found_id>/',views.detail_2, name='detail_2'),
     path('search/', views.search, name = 'search'),
 ]
