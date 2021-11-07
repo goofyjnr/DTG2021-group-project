@@ -13,6 +13,7 @@ def index(request):
     all_found = FoundItem.objects.all().order_by("datefound")
 
     lost_phones = all_lost.filter(typeofitem__contains = "phone")
+    found_phones = all_found.filter(typeofitem__contains = "phone")
 
     lost_today = all_lost.filter(datelost = datetime.now())
     found_today = all_found.filter(datefound = datetime.now())
@@ -20,6 +21,27 @@ def index(request):
     context = {"all_lost" : all_lost, "lost_phones": lost_phones, "lost_today":lost_today, "all_found" : all_found, "found_today" : found_today}
 
     return render(request, 'lostandfound/index.html',context)
+
+def lost_items(request):
+
+    all_lost = LostItem.objects.all().order_by("datelost")
+
+    lost_phones = all_lost.filter(typeofitem__contains = "phone")
+
+    context = {"all_lost" : all_lost, "lost_phones": lost_phones,}
+
+    return render(request, 'lostandfound/lost_items.html',context)
+
+def Found_items(request):
+
+    all_found = FoundItem.objects.all().order_by("datefound")
+    found_phones = all_found.filter(typeofitem__contains = "phone")
+
+    context = {"all_found" : all_found, "found_phones" : found_phones, }
+
+    return render(request, 'lostandfound/Found_items.html',context)
+
+
 
 def detail(request,lost_id):
 
