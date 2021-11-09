@@ -39,7 +39,7 @@ def Found_items(request):
 
     context = {"all_found" : all_found, "found_phones" : found_phones, }
 
-    return render(request, 'lostandfound/Found_items.html',context)
+    return render(request, 'lostandfound/found_items.html',context)
 
 
 

@@ -23,5 +23,5 @@ urlpatterns = [
     path('found<int:found_id>/',views.detail_2, name='detail_2'),
     path('search/', views.search, name = 'search'),
     path('lost_items/', views.lost_items, name='lost_items'),
-    path('Found_items/', views.Found_items, name='Found_items')
+    path('found_items/', views.Found_items, name='Found_items')
 ]
