@@ -20,11 +20,13 @@
 
 <h2>All Found Items</h2>
 <table class = "table table-striped">
-  <tr>
-    <th>Title</th>
-    <th>Type of item</th>
-    <th>Date Found</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Type of item</th>
+      <th>Date Found</th>
+    </tr>
+  </thead>
   {% for Founditem in all_found %}
       <tr>
           <td><a href="{% url 'detail_2' Founditem.id%}">{{Founditem.title}}</a></td>
@@ -33,4 +35,22 @@
       </tr>
   {% endfor %}
 
+</table>
+
+<h2>Found Today</h2>
+<table class = "table table-striped ">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Type of item</th>
+      <th>Date Found</th>
+    </tr>
+  </thead>
+  {% for Founditem in found_today%}
+      <tr>
+        <td><a href="{% url 'detail' Founditem.id%}">{{Founditem.title}}</a></td>
+        <td>{{Founditem.typeofitem}}</td>
+        <td>{{Founditem.datefound}}</td>
+      </tr>
+  {% endfor %}
 </table>

@@ -17,14 +17,53 @@
   <a href="http://127.0.0.1:8000/index/found_items/">      Found items</a>
 </h2>
 
-<h2>All lost items</h2>
 
+<h2>Lost today</h2>
 <table class = "table table-striped ">
+  <thead>
     <tr>
       <th>Title</th>
       <th>Type of item</th>
       <th>Date lost</th>
     </tr>
+</thead>
+  {% for Lostitem in lost_today%}
+      <tr>
+        <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.title}}</a></td>
+        <td>{{Lostitem.typeofitem}}</td>
+        <td>{{Lostitem.datelost}}</td>
+      </tr>
+  {% endfor %}
+
+</table>
+
+<h2>Found Today</h2>
+<table class = "table table-striped ">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Type of item</th>
+      <th>Date Found</th>
+    </tr>
+  </thead>
+  {% for Founditem in found_today%}
+      <tr>
+        <td><a href="{% url 'detail' Founditem.id%}">{{Founditem.title}}</a></td>
+        <td>{{Founditem.typeofitem}}</td>
+        <td>{{Founditem.datefound}}</td>
+      </tr>
+  {% endfor %}
+</table>
+
+<h2>All lost items</h2>
+<table class = "table table-striped ">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Type of item</th>
+        <th>Date lost</th>
+      </tr>
+    </thead>
     {% for Lostitem in all_lost%}
         <tr>
             <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.title}}</a></td>
@@ -35,21 +74,21 @@
 
   </table>
 
-
-
-  <h2>Lost today</h2>
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Type of item</th>
-      <th>Date lost</th>
-    </tr>
-    {% for Lostitem in lost_today%}
+  <h2>All Found Items</h2>
+  <table class = "table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Type of item</th>
+        <th>Date Found</th>
+      </tr>
+    </thead>
+    {% for Founditem in all_found %}
         <tr>
-          <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.title}}</a></td>
-          <td>{{Lostitem.typeofitem}}</td>
-          <td>{{Lostitem.datelost}}</td>
+            <td><a href="{% url 'detail_2' Founditem.id%}">{{Founditem.title}}</a></td>
+            <td>{{Founditem.typeofitem}}</td>
+            <td>{{Founditem.datefound}}</td>
         </tr>
     {% endfor %}
-
+  
   </table>

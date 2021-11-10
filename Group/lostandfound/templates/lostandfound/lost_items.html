@@ -21,11 +21,13 @@
 <h2>All lost items</h2>
 
 <table class = "table table-striped">
-    <tr>
-      <th>Title</th>
-      <th>Type of item</th>
-      <th>Date lost</th>
-    </tr>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Type of item</th>
+        <th>Date lost</th>
+      </tr>
+    </thead>
     {% for Lostitem in all_lost%}
         <tr>
             <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.title}}</a></td>
@@ -37,12 +39,14 @@
     </table>
 
 <h2>Lost phones</h2>
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Type of item</th>
-      <th>Date lost</th>
-    </tr>
+  <table class = "table table-striped ">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Type of item</th>
+        <th>Date lost</th>
+      </tr>
+    </thead>
     {% for Lostitem in lost_phones%}
         <tr>
           <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.title}}</a></td>

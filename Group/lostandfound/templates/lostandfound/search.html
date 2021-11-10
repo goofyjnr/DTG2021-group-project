@@ -28,12 +28,14 @@
 <h2>Results</h2>
 
 <h2>Lost items</h2>
-<table>
-    <tr>
+<table class = "table table-striped ">
+    <thead>
+      <tr>
         <th>Title</th>
         <th>Type of item</th>
         <th>Date lost</th>
       </tr>
+    </thead>
       {% for Lostitem in relevant_lost %}
           <tr>
             <td><a href="{% url 'detail' Lostitem.id%}">{{Lostitem.title}}</a></td>
@@ -43,12 +45,14 @@
       {% endfor %}
 </table>
 <h2>Found items</h2>
-<table>
-  <tr>
+<table class = "table table-striped ">
+  <thead>
+    <tr>
       <th>Title</th>
       <th>Type of item</th>
       <th>Date Found</th>
     </tr>
+  </thead>
     {% for Founditem in relevant_found %}
         <tr>
           <td><a href="{% url 'detail_2' Founditem.id%}">{{Founditem.title}}</a></td>

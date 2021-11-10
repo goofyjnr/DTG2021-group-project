@@ -36,8 +36,9 @@ def Found_items(request):
 
     all_found = FoundItem.objects.all().order_by("datefound")
     found_phones = all_found.filter(typeofitem__contains = "phone")
+    found_today = all_found.filter(datefound = datetime.now())
 
-    context = {"all_found" : all_found, "found_phones" : found_phones, }
+    context = {"all_found" : all_found, "found_phones" : found_phones, "found_today": found_today, }
 
     return render(request, 'lostandfound/found_items.html',context)
 
