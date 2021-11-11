@@ -26,9 +26,10 @@ def lost_items(request):
 
     all_lost = LostItem.objects.all().order_by("datelost")
 
+    lost_today =  all_lost.filter(datelost = datetime.now())
     lost_phones = all_lost.filter(typeofitem__contains = "phone")
 
-    context = {"all_lost" : all_lost, "lost_phones": lost_phones,}
+    context = {"all_lost" : all_lost, "lost_phones": lost_phones, "lost_today" : lost_today}
 
     return render(request, 'lostandfound/lost_items.html',context)
 
