@@ -9,15 +9,18 @@
   <title>Lost and Found website home page</title>
 </head>
 
-<h1 class="display-5">Lost and Found website</h1>
-<h2 class="display-6">
+<div class="container sticky-top border border-dark bg-white">
+<h1 class="display-5 text-center">Lost and Found website</h1>
+
+<h2 class="display-6 text-center">
   <!--<a href="http://127.0.0.1:8000/index/">Home        </a>-->
   <a href="http://127.0.0.1:8000/index/search/">Search items     </a>
   <a href="http://127.0.0.1:8000/index/lost_items/">      Lost items</a>
   <a href="http://127.0.0.1:8000/index/found_items/">      Found items</a>
 </h2>
+</div>
 
-
+<div class="container">
 <h2 class="display-6">Lost today</h2>
 <table class = "table table-striped table-hover">
   <thead>
@@ -92,3 +95,4 @@
     {% endfor %}
   
   </table>
+</div>

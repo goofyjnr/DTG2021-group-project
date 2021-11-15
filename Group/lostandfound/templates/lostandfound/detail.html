@@ -9,11 +9,22 @@
     <title>Lost and Found website Lost items details</title>
   </head>
 
-<h1 class="display-5">Lost Item</h1>
+  <div class="container sticky-top border border-dark bg-white">
+    <h1 class="display-5 text-center">Lost Item</h1>
+    
+    <h2 class="display-6 text-center">
+      <a href="http://127.0.0.1:8000/index/">Home        </a>
+      <a href="http://127.0.0.1:8000/index/search/">Search items     </a>
+      <a href="http://127.0.0.1:8000/index/lost_items/">      Lost items</a>
+      <a href="http://127.0.0.1:8000/index/found_items/">      Found items</a>
+    </h2>
+    </div>
+
+<div class="container-fluid">
 <h2>{{lost_item.title}}</h2>
-<h1>{{lost_item.typeofitem }}</h1>
+<h2>{{lost_item.typeofitem }}</h1>
 <h2>{{lost_itemfound_item.datelost }}</h2>
 <h2>{{lost_item.description}}</h2>
 <h2>{{lost_item.contactinfo}}</h2>
 <h2>{{lost_item.name}}</h2>
-<p>need to format things better</p>
+</div>
