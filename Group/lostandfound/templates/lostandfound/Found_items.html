@@ -52,7 +52,7 @@
   </thead>
   {% for Founditem in found_today%}
       <tr>
-        <td><a href="{% url 'detail' Founditem.id%}">{{Founditem.title}}</a></td>
+        <td><a href="{% url 'detail_2' Founditem.id%}">{{Founditem.title}}</a></td>
         <td>{{Founditem.typeofitem}}</td>
         <td>{{Founditem.datefound}}</td>
       </tr>
